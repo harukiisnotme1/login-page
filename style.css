@@ -1,0 +1,133 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* dark tech gradient */
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    /* Container to center everything */
+    .container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4); /* slight black background */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+      animation: slideIn 1s ease;
+    }
+
+    /* Umbrella logo styling */
+    .container img {
+      max-height: 300px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .container img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Login form box */
+    .login-box {
+      display: flex;
+      flex-direction: column;
+      min-width: 250px;
+    }
+
+    /* Input fields */
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      width: 100%;
+    }
+
+    /* Buttons */
+    input[type="submit"], input[type="reset"] {
+      padding: 10px;
+      margin: 5px 5px 0 0;
+      border: none;
+      border-radius: 5px;
+      background-color: crimson;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: darkred;
+    }
+
+    input:focus {
+  border: 2px solid crimson;
+  box-shadow: 0 0 10px crimson; /* glowing red light */
+}
+
+
+
+    /* Animation for fade-in */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Slide in effect */
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .login-box {
+    width: 90%;
+  }
+
+  input {
+    font-size: 17px;
+  }
+}
+
+/* 💻 Small Laptop (769px–1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .login-box {
+    width: 60%;
+  }
+}
+
+/* 🖥️ Big Desktop (1025px and up) */
+@media screen and (min-width: 1025px) {
+  .container {
+    padding: 60px;
+    gap: 50px;
+  }
+
+  .login-box {
+    width: 400px;
+  }
+}
